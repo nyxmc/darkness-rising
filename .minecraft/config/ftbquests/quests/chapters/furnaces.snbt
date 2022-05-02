@@ -1,0 +1,37 @@
+{
+	id: "00EE899FF0F90F4C"
+	group: "2A4655EE29917448"
+	order_index: 0
+	filename: "furnaces"
+	title: "Furnaces"
+	icon: "furnacemk2:furnacemk2"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: 0.0d
+			y: 0.0d
+			description: ["Upon arriving in this world, you came to realise that you need to get something sturdy to at least supply you with decent weapons and protection. But to convert your Raw Minerals into something usable, you'll need to smelt it down."]
+			id: "33A24545F0AD06B4"
+			tasks: [{
+				id: "58998A3C1350A882"
+				type: "questsadditions:place"
+				block: "minecraft:furnace"
+				replaced: "minecraft:air"
+				value: 1L
+				replace: false
+			}]
+		}
+		{
+			x: 0.0d
+			y: -1.5d
+			description: ["While your furnace certainly does the job, it's fairly slow. Perhaps there's a way to upgrade it?"]
+			id: "1162543517CE99C1"
+			tasks: [{
+				id: "5F20DC5BCD35CAAB"
+				type: "item"
+				item: "tokenablefurnaces:irontoken"
+			}]
+		}
+	]
+}

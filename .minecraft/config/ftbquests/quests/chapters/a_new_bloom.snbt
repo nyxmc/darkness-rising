@@ -1,0 +1,30 @@
+{
+	id: "41546082E38FABDD"
+	group: "0A4FA4BC751FEC87"
+	order_index: 0
+	filename: "a_new_bloom"
+	title: "A New Bloom"
+	icon: "botania:pure_daisy"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [{
+		x: 8.0d
+		y: 1.0d
+		subtitle: "A New Bloom"
+		description: ["Obtain the Lexica Botania, your start into the world of Botany!"]
+		id: "0E4249EFFFEA5FFB"
+		tasks: [{
+			id: "0644B77650F9110E"
+			type: "advancement"
+			title: "Botany"
+			icon: "botania:lexicon"
+			advancement: "botania:main/root"
+			criterion: ""
+		}]
+		rewards: [{
+			id: "160F2699780034F2"
+			type: "item"
+			item: "botania:flower_bag"
+		}]
+	}]
+}

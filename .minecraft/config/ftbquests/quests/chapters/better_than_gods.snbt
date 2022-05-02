@@ -1,0 +1,22 @@
+{
+	id: "0A8DEBA8ABC1577A"
+	group: ""
+	order_index: 0
+	filename: "better_than_gods"
+	title: "Better Than Gods"
+	icon: "dragonloot:dragon_scale"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [{
+		x: 8.0d
+		y: 3.0d
+		dependency_requirement: "one_started"
+		hide_text_until_complete: true
+		id: "5DF76FD57854F5FD"
+		tasks: [{
+			id: "368EA2EF9030D0FE"
+			type: "item"
+			item: "dragonloot:dragon_scale"
+		}]
+	}]
+}

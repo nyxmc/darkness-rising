@@ -1,0 +1,223 @@
+{
+	id: "4BA66E3D7AD11D61"
+	group: "4503A197DEADC733"
+	order_index: 0
+	filename: "a_frosty_barrage"
+	title: "A Frosty Barrage"
+	icon: "bsf:compacted_snowball_set"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: 3.0d
+			y: 1.5d
+			description: ["When you break snow, you receive small clumps of it known as Snowballs. Simple enough and fairly obvious. But upon researching this you discovered you can WEAPONIZE these Snowballs. Obtain enough snowballs to last you a while so as to use them against your foes!"]
+			id: "15425DDA7B8BEB80"
+			tasks: [{
+				id: "0B30DB961DC4E01D"
+				type: "item"
+				item: "minecraft:snowball"
+				count: 40L
+			}]
+			rewards: [{
+				id: "27247A1FDCF02132"
+				type: "item"
+				item: "minecraft:snowball"
+				count: 120
+			}]
+		}
+		{
+			x: 5.5d
+			y: 1.5d
+			description: ["Now that you have a large quantity of snowballs, you decide the first natural step using these would be to put rocks inside them. They should be a fairly respectable weapon for combat."]
+			hide_dependency_lines: false
+			dependencies: ["15425DDA7B8BEB80"]
+			id: "36DBBD695E9A418B"
+			tasks: [{
+				id: "455E141FC3A6BA9F"
+				type: "item"
+				item: "bsf:stone_snowball"
+				count: 10L
+			}]
+			rewards: [{
+				id: "7996726A4F256C71"
+				type: "item"
+				item: "bsf:smooth_snowball"
+				count: 20
+			}]
+		}
+		{
+			x: 5.5d
+			y: 3.5d
+			description: ["Your Stone Snowballs worked out great! You laughed as enemies just were utterly confused as to how soft snow was doing so much damage! Why not go even further though and make Iron Snowballs?"]
+			hide_dependency_lines: false
+			dependencies: ["455E141FC3A6BA9F"]
+			id: "1B4B9BB27A9894D9"
+			tasks: [{
+				id: "7819DDC6CB4A0049"
+				type: "item"
+				item: "bsf:iron_snowball"
+				count: 10L
+			}]
+			rewards: [{
+				id: "2F090D9E91FCEEB2"
+				type: "item"
+				item: "bsf:iron_snowball"
+				count: 10
+			}]
+		}
+		{
+			x: 3.0d
+			y: 5.0d
+			description: ["It seems others may have discovered the art of Snowballs and is using them against you. But do not fret! It shouldn't be that hard to make something that can catch them and throw them back."]
+			dependencies: ["1B4B9BB27A9894D9"]
+			id: "6A77DB34DBFDAE64"
+			tasks: [{
+				id: "5B147D1E37BE6FCC"
+				type: "item"
+				item: {
+					id: "bsf:glove"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+			rewards: [{
+				id: "350BF8843CDB5194"
+				type: "item"
+				item: "minecraft:snowball"
+				count: 80
+			}]
+		}
+		{
+			x: 7.5d
+			y: 5.5d
+			description: ["Just continously lobbing these powerful Snowballs at your enemy is fun at all, but if only there a way to accumulate more power when you throw them...."]
+			dependencies: ["1B4B9BB27A9894D9"]
+			id: "302D3D265BA66156"
+			tasks: [{
+				id: "03D3F3DCC6129EEE"
+				type: "item"
+				item: {
+					id: "bsf:snowball_cannon"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+			rewards: [{
+				id: "695894E0BC1ABB24"
+				type: "item"
+				item: "bsf:iron_snowball"
+				count: 8
+			}]
+		}
+		{
+			x: 5.5d
+			y: 5.5d
+			description: ["By now you've got a very strong arsenal of Snowballs on your side, so why not try and achieve the strongest Snowballs you can find!"]
+			dependencies: ["1B4B9BB27A9894D9"]
+			id: "4BBD236440D517E5"
+			tasks: [{
+				id: "0182BFA91014A825"
+				type: "item"
+				item: "bsf:gold_snowball"
+				count: 10L
+			}]
+			rewards: [{
+				id: "7EAFD612551CE03E"
+				type: "item"
+				item: "bsf:gold_snowball"
+				count: 20
+			}]
+		}
+		{
+			x: 5.5d
+			y: 7.0d
+			description: ["You've found quite possibly one of the hardest rocks in this world. So of course you decide to use it to pelt your enemies!"]
+			dependencies: ["4BBD236440D517E5"]
+			id: "04BC8B54BF931CA6"
+			tasks: [{
+				id: "5D3B2B5D4339E117"
+				type: "item"
+				item: "bsf:obsidian_snowball"
+				count: 20L
+			}]
+			rewards: [{
+				id: "79AB037DC603365A"
+				type: "item"
+				item: "bsf:super_power_core"
+			}]
+		}
+		{
+			x: 3.5d
+			y: 8.5d
+			description: ["With your research into Obsidian and its application in Snowballs, you realised it was incredibly resistant to Explosions. So why not use that in order to create Snowballs that can create a controlled explosion! Shouldn't be too hard with all those green pigs walking around for fuel."]
+			dependencies: ["04BC8B54BF931CA6"]
+			id: "68A7D9C81A51AF99"
+			tasks: [{
+				id: "18D4530049AAEE18"
+				type: "item"
+				item: "bsf:explosive_snowball"
+				count: 10L
+			}]
+			rewards: [{
+				id: "0258DD70939775B9"
+				type: "item"
+				item: "bsf:super_frozen_core"
+			}]
+		}
+		{
+			x: 7.0d
+			y: 8.5d
+			description: ["You've spent countless hours... Just breaking Snow again, and again, and again, and again! It's so tedious having to constantly locate some snow whenever you need to restock your Frosty Ammunition. But while reading old Research, you heard rumors of a device able to Conjure up various materials from just a strange blue liquid. It seems linked to the study of Botany. Perhaps you should start there?"]
+			hide_dependency_lines: false
+			dependencies: ["04BC8B54BF931CA6"]
+			id: "305869498B4AE95C"
+			tasks: [{
+				id: "05C4242B86FC0588"
+				type: "item"
+				item: "botania:conjuration_catalyst"
+			}]
+			rewards: [{
+				id: "75C8F389FCD0DEC7"
+				type: "item"
+				item: "bsf:obsidian_snowball"
+				count: 10
+			}]
+		}
+		{
+			x: 5.5d
+			y: 10.0d
+			description: ["It's gotten somewhat lonely recently.... Why not make some friends? They could be useful to defend your base and it seems they love Snowballs almost as much as you!"]
+			id: "74674AA69980B983"
+			tasks: [{
+				id: "0E977831D39879D6"
+				type: "observation"
+				icon: "minecraft:carved_pumpkin"
+				timer: 20L
+				observe_type: 5
+				to_observe: "minecraft:snow_golem"
+			}]
+		}
+		{
+			x: 5.5d
+			y: 12.0d
+			description: ["Congratulations, it seems you've perfected your art of Snowballs!"]
+			hide_dependency_lines: false
+			dependencies: [
+				"68A7D9C81A51AF99"
+				"05C4242B86FC0588"
+				"0E977831D39879D6"
+			]
+			id: "2CE36E95ECF9764C"
+			tasks: [{
+				id: "602F958F18A5EF32"
+				type: "checkmark"
+				title: "A Frosty Barrage"
+			}]
+		}
+	]
+}

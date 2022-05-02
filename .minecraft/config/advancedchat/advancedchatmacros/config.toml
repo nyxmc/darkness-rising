@@ -1,0 +1,6 @@
+
+[general]
+	# Will Konstruct be enabled within chat
+	konstructEnabled = false
+	preventRecursion = false
+

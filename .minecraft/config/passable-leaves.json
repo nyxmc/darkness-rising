@@ -1,0 +1,29 @@
+{
+  "projectile": {
+    "v_x": 0.5,
+    "v_y": 0.5,
+    "v_z": 0.5
+  },
+  "glidingLiving": {
+    "v_x": 0.9,
+    "v_y": 0.99996,
+    "v_z": 0.9
+  },
+  "jumpingLiving": {
+    "v_x": 0.8,
+    "v_y": 1.0,
+    "v_z": 0.8
+  },
+  "living": {
+    "v_x": 0.8,
+    "v_y": 0.8,
+    "v_z": 0.8
+  },
+  "entity": {
+    "v_x": 0.7,
+    "v_y": 0.7,
+    "v_z": 0.7
+  },
+  "fallDistanceFactor": 0.75,
+  "fallDamageFactor": 0.5
+}

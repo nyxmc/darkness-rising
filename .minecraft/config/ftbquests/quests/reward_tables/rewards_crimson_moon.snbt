@@ -1,0 +1,24 @@
+{
+	id: "3BB62C6DC1DA105F"
+	order_index: 0
+	title: "Rewards (Crimson Moon)"
+	loot_size: 1
+	rewards: [
+		{
+			item: {
+				id: "botania:brew_vial"
+				Count: 1b
+				tag: {
+					brewKey: "botania:overload"
+				}
+			}
+		}
+		{ item: "botania:blacker_lotus" }
+		{
+			icon: "crimsonmoon:crimson_brew"
+			command: "/effect give @p minecraft:strength 300 3 true"
+			player_command: false
+			type: "command"
+		}
+	]
+}

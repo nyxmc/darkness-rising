@@ -1,0 +1,5 @@
+type = customizablemenus
+
+dev.ftb.mods.ftblibrary.ui.ScreenWrapper {
+}
+

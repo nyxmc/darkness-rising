@@ -1,0 +1,18 @@
+{
+  "enableCustomTextures": true,
+  "textureUpdateFrequency": 3,
+  "enableEmissiveTextures": true,
+  "alwaysCheckVanillaEmissiveSuffix": true,
+  "doShadersEmissiveFix": false,
+  "enchantedPotionEffects": "NONE",
+  "skinFeaturesEnabled": true,
+  "skinFeaturesEnableTransparency": true,
+  "skinFeaturesEnableFullTransparency": false,
+  "enableEnemyTeamPlayersSkinFeatures": true,
+  "enableBlinking": true,
+  "blinkFrequency": 150,
+  "blinkLength": 1,
+  "enableTridents": true,
+  "enableElytra": true,
+  "elytraThicknessFix": true
+}

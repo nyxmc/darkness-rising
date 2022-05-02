@@ -1,0 +1,39 @@
+{
+	id: "45D20C37575DB065"
+	group: "677B5724D0841781"
+	order_index: 0
+	filename: "eyes_of_the_eternal_night"
+	title: "Eyes of the Eternal Night"
+	icon: "minecraft:end_portal_frame"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: -0.5d
+			y: -0.5d
+			shape: "gear"
+			id: "72E7383A057BE5DB"
+			tasks: [{
+				id: "24CE16347FC07A41"
+				type: "structure"
+				title: "Night Gate"
+				icon: "minecraft:end_portal_frame"
+				structure: "endrem:end_gate"
+			}]
+		}
+		{
+			title: "The Cold Eye"
+			icon: "minecraft:ender_eye"
+			x: -0.5d
+			y: -2.5d
+			id: "14877A5FC8C0BCB8"
+			tasks: [{
+				id: "2EEB2B57331A1316"
+				type: "kill"
+				icon: "bosses_of_mass_destruction:soul_star"
+				entity: "bosses_of_mass_destruction:lich"
+				value: 1L
+			}]
+		}
+	]
+}

@@ -1,0 +1,8 @@
+{
+	chapter_groups: [
+		{ id: "0A4FA4BC751FEC87", title: "Arcane Arts" }
+		{ id: "4503A197DEADC733", title: "Combat" }
+		{ id: "677B5724D0841781", title: "The Eternal Night" }
+		{ id: "2A4655EE29917448", title: "Utilities" }
+	]
+}

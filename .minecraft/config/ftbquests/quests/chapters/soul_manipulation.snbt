@@ -1,0 +1,35 @@
+{
+	id: "279E27426D11F5B2"
+	group: "0A4FA4BC751FEC87"
+	order_index: 3
+	filename: "soul_manipulation"
+	title: "Soul Manipulation"
+	icon: "conjuring:conjuration_essence"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [{
+		x: 14.5d
+		y: 4.0d
+		subtitle: "Conjuring"
+		description: ["By killiing the Night Lich, you obtained some new knowledge about the study of Souls."]
+		dependencies: ["14877A5FC8C0BCB8"]
+		id: "36592C27B96A36FF"
+		tasks: [{
+			id: "6614B23C4B8A139B"
+			type: "kill"
+			title: "The Reaper of Souls"
+			icon: "bosses_of_mass_destruction:soul_star"
+			entity: "bosses_of_mass_destruction:lich"
+			value: 1L
+		}]
+		rewards: [{
+			id: "341530625BF5173B"
+			type: "item"
+			item: {
+				id: "conjuring:enchiridion"
+				Count: 1b
+				tag: { }
+			}
+		}]
+	}]
+}

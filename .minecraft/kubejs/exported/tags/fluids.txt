@@ -1,0 +1,29 @@
+To refresh this file, delete it and run /reload command again! Last updated: Apr 16, 2022, 5:19:23 PM
+
+#spectrum:midnight_solution_converted
+- #spectrum:liquid_crystal
+
+#minecraft:lava
+- minecraft:lava
+- minecraft:flowing_lava
+
+#spectrum:midnight_solution
+- spectrum:midnight_solution
+- spectrum:flowing_midnight_solution
+
+#minecraft:water
+- minecraft:water
+- minecraft:flowing_water
+
+#spectrum:swimmable_fluid
+- #spectrum:liquid_crystal
+- #spectrum:mud
+- #spectrum:midnight_solution
+
+#spectrum:liquid_crystal
+- spectrum:liquid_crystal
+- spectrum:flowing_liquid_crystal
+
+#spectrum:mud
+- spectrum:mud
+- spectrum:flowing_mud

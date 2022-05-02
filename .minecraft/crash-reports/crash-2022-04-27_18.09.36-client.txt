@@ -1,0 +1,487 @@
+---- Minecraft Crash Report ----
+// You're mean.
+
+Time: 4/27/22, 6:09 PM
+Description: Ticking entity
+
+java.lang.IllegalStateException
+	at Not Enough Crashes deobfuscated stack trace.(1.18.2+build.3)
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:486)
+	at dev.onyxstudios.cca.internal.base.GenericContainerBuilder.factoryNameSuffix(GenericContainerBuilder.java:70)
+	at dev.onyxstudios.cca.api.v3.component.ComponentContainer$Factory$Builder.factoryNameSuffix(ComponentContainer.java:194)
+	at dev.onyxstudios.cca.internal.item.StaticItemComponentPlugin.getFactoryClass(StaticItemComponentPlugin.java:84)
+	at dev.onyxstudios.cca.internal.item.StaticItemComponentPlugin.createItemStackContainerFactory(StaticItemComponentPlugin.java:72)
+	at net.minecraft.item.Item.cardinal_createComponents(Item:2068)
+	at net.minecraft.item.ItemStack.getComponentContainer(ItemStack:5207)
+	at dev.onyxstudios.cca.api.v3.component.ComponentKey.maybeGet(ComponentKey.java:109)
+	at top.theillusivec4.trinketshulkerboxes.common.TrinketShulkerBox.tick(TrinketShulkerBox.java:31)
+	at net.minecraft.entity.player.PlayerInventory.mded0f78$lambda$updateItems$0$7(PlayerInventory:5694)
+	at dev.emi.trinkets.api.LivingEntityTrinketComponent.forEach(LivingEntityTrinketComponent.java:335)
+	at net.minecraft.entity.player.PlayerInventory.mded0f78$lambda$updateItems$1$6(PlayerInventory:5693)
+	at java.util.Optional.ifPresent(Optional.java:178)
+	at net.minecraft.entity.player.PlayerInventory.handler$fme001$updateItems(PlayerInventory:5692)
+	at net.minecraft.entity.player.PlayerInventory.updateItems(PlayerInventory:260)
+	at net.minecraft.entity.player.PlayerEntity.tickMovement(PlayerEntity:557)
+	at net.minecraft.client.network.ClientPlayerEntity.tickMovement(ClientPlayerEntity:836)
+	at net.minecraft.entity.LivingEntity.tick(LivingEntity:2354)
+	at net.minecraft.entity.player.PlayerEntity.tick(PlayerEntity:275)
+	at net.minecraft.client.network.ClientPlayerEntity.tick(ClientPlayerEntity:212)
+	at net.minecraft.client.world.ClientWorld.tickEntity(ClientWorld:217)
+	at net.minecraft.world.World.tickEntity(World:485)
+	at net.minecraft.client.world.ClientWorld.method_32124(ClientWorld:200)
+	at net.minecraft.world.EntityList.forEach(EntityList:54)
+	at net.minecraft.client.world.ClientWorld.tickEntities(ClientWorld:196)
+	at net.minecraft.client.MinecraftClient.tick(MinecraftClient:1761)
+	at net.minecraft.client.MinecraftClient.render(MinecraftClient:1091)
+	at net.minecraft.client.MinecraftClient.run(MinecraftClient:737)
+	at net.minecraft.client.main.Main.main(Main:236)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:568)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:416)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:77)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:568)
+	at org.multimc.onesix.OneSixLauncher.launchWithMainClass(OneSixLauncher.java:210)
+	at org.multimc.onesix.OneSixLauncher.launch(OneSixLauncher.java:245)
+	at org.multimc.EntryPoint.listen(EntryPoint.java:143)
+	at org.multimc.EntryPoint.main(EntryPoint.java:34)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:486)
+	at dev.onyxstudios.cca.internal.base.GenericContainerBuilder.factoryNameSuffix(GenericContainerBuilder.java:70)
+	at dev.onyxstudios.cca.api.v3.component.ComponentContainer$Factory$Builder.factoryNameSuffix(ComponentContainer.java:194)
+	at dev.onyxstudios.cca.internal.item.StaticItemComponentPlugin.getFactoryClass(StaticItemComponentPlugin.java:84)
+	at dev.onyxstudios.cca.internal.item.StaticItemComponentPlugin.createItemStackContainerFactory(StaticItemComponentPlugin.java:72)
+	at net.minecraft.class_1792.cardinal_createComponents(class_1792.java:2068)
+	at net.minecraft.class_1799.getComponentContainer(class_1799.java:5207)
+	at dev.onyxstudios.cca.api.v3.component.ComponentKey.maybeGet(ComponentKey.java:109)
+	at top.theillusivec4.trinketshulkerboxes.common.TrinketShulkerBox.tick(TrinketShulkerBox.java:31)
+	at net.minecraft.class_1661.mded0f78$lambda$updateItems$0$7(class_1661.java:5694)
+	at dev.emi.trinkets.api.LivingEntityTrinketComponent.forEach(LivingEntityTrinketComponent.java:335)
+	at net.minecraft.class_1661.mded0f78$lambda$updateItems$1$6(class_1661.java:5693)
+	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+	at net.minecraft.class_1661.handler$fme001$updateItems(class_1661.java:5692)
+	at net.minecraft.class_1661.method_7381(class_1661.java:260)
+	at net.minecraft.class_1657.method_6007(class_1657.java:557)
+	at net.minecraft.class_746.method_6007(class_746.java:836)
+	at net.minecraft.class_1309.method_5773(class_1309.java:2354)
+	at net.minecraft.class_1657.method_5773(class_1657.java:275)
+	at net.minecraft.class_746.method_5773(class_746.java:212)
+	at net.minecraft.class_638.method_18646(class_638.java:217)
+	at net.minecraft.class_1937.method_18472(class_1937.java:485)
+	at net.minecraft.class_638.method_32124(class_638.java:200)
+	at net.minecraft.class_5574.method_31791(class_5574.java:54)
+	at net.minecraft.class_638.method_18116(class_638.java:196)
+
+-- Entity being ticked --
+Details:
+	Entity Type: minecraft:player (net.minecraft.class_746)
+	Entity ID: 1
+	Entity Name: MaliciousZoroark
+	Entity's Exact location: -41.95, 71.00, 96.13
+	Entity's Block location: World: (-42,71,96), Section: (at 6,7,0 in -3,4,6; chunk contains blocks -48,-64,96 to -33,319,111), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,-64,0 to -1,319,511)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: null
+	Entity NBT: {AbsorptionAmount:0.0f,ActiveEffects:[{Ambient:0b,Amplifier:0b,Duration:32391,Id:31b,ShowIcon:1b,ShowParticles:0b}],AgilityLevel:0,Air:300s,AlchemyLevel:99,ArcheryLevel:1,Attributes:[{Base:0.0d,Name:"stepheightentityattribute:stepheight"},{Base:0.019999999552965164d,Name:"additionalentityattributes:water_speed"},{Base:0.5d,Name:"additionalentityattributes:critical_bonus_damage"},{Base:0.0d,Name:"reach-entity-attributes:reach"},{Base:21.0d,Name:"minecraft:generic.attack_damage"},{Base:20.0d,Name:"minecraft:generic.max_health"},{Base:96.0d,Name:"additionalentityattributes:water_visibility"},{Base:0.0d,Name:"minecraft:generic.luck"},{Base:0.0d,Name:"reach-entity-attributes:attack_range"},{Base:4.0d,Name:"minecraft:generic.attack_speed"},{Base:0.0d,Name:"minecraft:generic.armor"},{Base:0.09d,Name:"minecraft:generic.movement_speed"}],BMLootBlock:0b,BalmData:{},Brain:{memories:{}},DataVersion:2975,DeathTime:0s,DefenseLevel:0,EnderItems:[],FallDistance:0.0f,FallFlying:0b,FarmingLevel:0,Fire:0s,Health:13.666669f,HealthLevel:0,HurtByTimestamp:0,HurtTime:0s,Inventorio:{DeepPockets:[],SelectedUtilitySlot:1,ToolBelt:[],UtilityBelt:[]},Inventory:[{Count:1b,LapisReserve:0b,id:"minecraft:air",tag:{}},{Count:1b,Slot:0b,id:"spectrum:manual",tag:{}},{Count:1b,Slot:1b,id:"minecraft:compass",tag:{HideFlags:127,LodestoneDimension:"minecraft:the_end",LodestonePos:{X:-43,Y:73,Z:44},LodestoneTracked:1b,"Polymer$itemId":"universal_graves:grave_compass","Polymer$itemTag":{ConvertToVanilla:0b,GraveId:3L},display:{Name:'{"italic":false,"color":"white","extra":[{"translate":"item.universal_graves.grave_compass"}],"text":""}'}}},{Count:1b,Slot:2b,id:"dragonloot:dragon_sword",tag:{Damage:85,Enchantments:[{id:"spellbound:rampage",lvl:3s}]}},{Count:1b,Slot:3b,id:"minecraft:glass_bottle"},{Count:1b,Slot:5b,id:"minecraft:carrot"},{Count:4b,Slot:6b,id:"magehand:amethyst_spawner_item"},{Count:64b,Slot:7b,id:"minecraft:zombie_spawn_egg"},{Count:44b,Slot:8b,id:"minecraft:zombie_spawn_egg"},{Count:2b,Slot:9b,id:"minecraft:wheat_seeds"},{Count:1b,Slot:10b,id:"spectrum:manual"},{Count:1b,Slot:11b,id:"spectrum:spectral_shard"},{Count:1b,Slot:12b,id:"minecraft:white_banner",tag:{BlockEntityTag:{Patterns:[{Color:9,Pattern:"mr"},{Color:8,Pattern:"bs"},{Color:7,Pattern:"cs"},{Color:8,Pattern:"bo"},{Color:15,Pattern:"ms"},{Color:8,Pattern:"hh"},{Color:8,Pattern:"mc"},{Color:15,Pattern:"bo"}],id:"minecraft:banner"},HideFlags:32,display:{Name:'{"color":"gold","translate":"block.minecraft.ominous_banner"}'}}},{Count:2b,Slot:13b,id:"ecologics:coconut_slice"},{Count:64b,Slot:14b,id:"minecraft:fermented_spider_eye"},{Count:5b,Slot:15b,id:"magehand:copper_spawner_item"},{Count:13b,Slot:21b,id:"minecraft:glass_bottle"},{Count:1b,Slot:23b,id:"spectrum:lesser_potion_pendant"},{Count:1b,Slot:24b,id:"minecraft:potion",tag:{CustomPotionColor:4738376,CustomPotionEffects:[{Ambient:1b,Amplifier:0b,Duration:1800,Id:18b,ShowIcon:1b,ShowParticles:1b}],display:{Name:'{"translate":"item.spectrum.potion"}'}}}],Invulnerable:0b,KubeJSPersistentData:{},Level:12,LevelProgress:0.48437476f,LuckLevel:0,MiningLevel:0,Motion:[0.0d,-0.0784000015258789d,0.0d],OnGround:1b,PortalCooldown:0,Pos:[-41.95459639596258d,71.0d,96.13116069881524d],Rotation:[-582.44165f,10.19976f],Score:4691,SelectedItemSlot:4,SkillPoints:12,SleepTimer:0s,SmithingLevel:0,StaminaLevel:0,StrengthLevel:20,TotalLevelExperience:627,TradeLevel:0,UUID:[I;1041891899,-893761689,-1520344196,1528960807],XpLevel:47,XpP:0.6339621f,XpSeed:0,XpTotal:4691,abilities:{flySpeed:0.05f,flying:0b,instabuild:1b,invulnerable:1b,mayBuild:1b,mayfly:1b,walkSpeed:0.1f},byg:{known_biomes:{minecraft:["minecraft:stony_shore","minecraft:plains"]}},cardinal_components:{"apoli:powers":{Powers:[]},"botania:kept_items":{stacks:[]},"eldritch_mobs:eldritch_modifiers":{eldritch:0b,elite:0b,rank:0b,saved_mods:{},ultra:0b},"origins:origin":{HadOriginBefore:1b,OriginLayers:[{Layer:"origins:origin",Origin:"origins:human"}]},"pickyourpoison:numbnessdamage":{DamageAccumulated:0.0f},"spectrum:azure_dike":{current_recharge_delay:0,max_protection:0,protection:0,recharge_delay_after_damage:0,recharge_delay_default:0},"trinkets:trinkets":{charm:{charm:{Items:[{Count:1b,id:"minecraft:air",tag:{}}],Metadata:{}}},chest:{back:{Items:[{Count:1b,id:"minecraft:shulker_box"}],Metadata:{}},cape:{Items:[{Count:1b,id:"minecraft:air",tag:{}}],Metadata:{}},necklace:{Items:[{Count:1b,id:"minecraft:air",tag:{}}],Metadata:{}},pin:{Items:[{Count:1b,id:"minecraft:air",tag:{}}],Metadata:{}},quiver:{Items:[{Count:1b,id:"nyfsquiver:netherite_quiver",tag:{Inventory:[{Slot:0,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:1,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:2,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:3,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:4,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:5,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:6,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:7,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:8,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:9,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:10,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:11,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:12,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:13,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:14,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:15,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:16,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:17,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:18,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:19,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:20,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:21,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:22,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:23,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:24,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:25,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:26,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:27,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:28,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:29,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:30,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:31,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:32,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:33,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:34,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:35,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:36,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:37,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:38,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:39,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:40,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:41,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:42,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:43,Stack:{Count:1b,id:"minecraft:air",tag:{}}},{Slot:44,Stack:{Count:1b,id:"minecraft:air",tag:{}}}],current_slot:0}}],Metadata:{}}},feet:{shoes:{Items:[{Count:1b,id:"minecraft:air",tag:{}}],Metadata:{}}},hand:{ring:{Items:[{Count:1b,id:"minecraft:air",tag:{}}],Metadata:{}}},head:{crown:{Items:[{Count:1b,id:"minecraft:air",tag:{}}],Metadata:{}},face:{Items:[{Count:1b,id:"minecraft:air",tag:{}}],Metadata:{}},hat:{Items:[{Count:1b,id:"minecraft:air",tag:{}}],Metadata:{}}},legs:{belt:{Items:[{Count:1b,id:"minecraft:air",tag:{}}],Metadata:{}}},offhand:{ring:{Items:[{Count:1b,id:"minecraft:air",tag:{}}],Metadata:{}}}}},checkedIfInLampChunk:0b,foodExhaustionLevel:0.0f,foodLevel:11,foodSaturationLevel:0.0f,foodTickTimer:0,itemblacklist:"empty",magnetismEnabled:1b,selectedslot:4,slot1:{},slot2:{ConvertToVanilla:0b,GraveId:3L},slot3:{Damage:85,Enchantments:[{id:"spellbound:rampage",lvl:3s}]},slot4:{},slot5:{},slot6:{},slot7:{},slot8:{},slot9:{},toggleslot1:1,toggleslot10:1,toggleslot2:1,toggleslot3:1,toggleslot4:1,toggleslot5:1,toggleslot6:1,toggleslot7:1,toggleslot8:1,toggleslot9:1}
+Stacktrace:
+	at net.minecraft.class_1937.method_18472(class_1937.java:485)
+	at net.minecraft.class_638.method_32124(class_638.java:200)
+	at net.minecraft.class_5574.method_31791(class_5574.java:54)
+	at net.minecraft.class_638.method_18116(class_638.java:196)
+	at net.minecraft.class_310.method_1574(class_310.java:1761)
+	at net.minecraft.class_310.method_1523(class_310.java:1091)
+	at net.minecraft.class_310.method_1514(class_310.java:737)
+	at net.minecraft.client.main.Main.main(Main.java:236)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:416)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:77)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.multimc.onesix.OneSixLauncher.launchWithMainClass(OneSixLauncher.java:210)
+	at org.multimc.onesix.OneSixLauncher.launch(OneSixLauncher.java:245)
+	at org.multimc.EntryPoint.listen(EntryPoint.java:143)
+	at org.multimc.EntryPoint.main(EntryPoint.java:34)
+
+-- Affected level --
+Details:
+	All players: 1 total; [class_746['MaliciousZoroark'/1, l='ClientLevel', x=-41.95, y=71.00, z=96.13]]
+	Chunk stats: 1024, 545
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-48,68,32), Section: (at 0,4,0 in -3,4,2; chunk contains blocks -48,-64,32 to -33,319,47), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,-64,0 to -1,319,511)
+	Level time: 126786 game time, 202853 day time
+	Server brand: fabric
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.class_638.method_8538(class_638.java:407)
+	at net.minecraft.class_310.method_1587(class_310.java:2376)
+	at net.minecraft.class_310.method_1514(class_310.java:756)
+	at net.minecraft.client.main.Main.main(Main.java:236)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:416)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:77)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.multimc.onesix.OneSixLauncher.launchWithMainClass(OneSixLauncher.java:210)
+	at org.multimc.onesix.OneSixLauncher.launch(OneSixLauncher.java:245)
+	at org.multimc.EntryPoint.listen(EntryPoint.java:143)
+	at org.multimc.EntryPoint.main(EntryPoint.java:34)
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: Default, spoornpacks, Fabric Mods, assets, KubeJS Resource Pack [assets]
+
+-- System Details --
+Details:
+	Minecraft Version: 1.18.2
+	Minecraft Version ID: 1.18.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 17.0.1, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 1219226824 bytes (1162 MiB) / 5662310400 bytes (5400 MiB) up to 5662310400 bytes (5400 MiB)
+	CPUs: 8
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+	Identifier: Intel64 Family 6 Model 126 Stepping 5
+	Microarchitecture: Ice Lake (Client)
+	Frequency (GHz): 1.19
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: Intel(R) UHD Graphics
+	Graphics card #0 vendor: Intel Corporation (0x8086)
+	Graphics card #0 VRAM (MB): 1024.00
+	Graphics card #0 deviceId: 0x8a56
+	Graphics card #0 versionInfo: DriverVersion=30.0.100.9864
+	Memory slot #0 capacity (MB): 4096.00
+	Memory slot #0 clockSpeed (GHz): 3.20
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MB): 4096.00
+	Memory slot #1 clockSpeed (GHz): 3.20
+	Memory slot #1 type: DDR4
+	Virtual memory max (MB): 18682.80
+	Virtual memory used (MB): 14670.61
+	Swap memory total (MB): 10752.00
+	Swap memory used (MB): 3246.05
+	JVM Flags: 3 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xms4800m -Xmx5400m
+	Fabric Mods: 
+		additionalentityattributes: Additionalentityattributes 1.0.0+1.18.2
+		advanced_runtime_resource_pack: Runtime Resource Pack 0.5.5
+		advancedchatcore: AdvancedChatCore 1.18.2-1.4.6
+		advancedchatmacros: AdvancedChatMacros 1.18.2-1.0.0
+		advancementinfo: AdvancementInfo 1.18.2-fabric0.47.10-1.3.1
+		alloy_forgery: Alloy Forgery 2.0.13+1.18
+		alternate-current: Alternate Current 1.2.0
+		ancient_puzzles: Ancient Puzzles 0.2-1.18.2
+		apoli: Apoli 2.3.3
+		architectury: Architectury 4.2.50
+		awesomedungeon: Awesome Dungeon 2.0.5
+		awesomedungeonend: Awesome Dungeon Edition end 1.0.0
+		awesomedungeonnether: Awesome Dungeon Edition Nether 1.0.0
+		awesomedungeonocean: Awesome Dungeon Edition Ocean 2.0.5
+		balm-fabric: Balm 3.0.0+0
+		basicshields: Basic Shields [Fabric] 1.3.1-1.18.2
+		bclib: BCLib 1.4.4
+		beaconoverhaul: Beacon Overhaul 1.6.0+1.18.2
+		better-snowball-fight: Better Snowball Fight 0.1
+		betterend: Better End 1.1.0
+		bettermounthud: Better Mount HUD 1.1.4
+		betternether: Better Nether 6.1.0
+		biomemakeover: Biome Makeover 1.18.2-1.4.17
+		bitsandchisels: BitsAndChisels 2.6.5
+		blockrunner: Block Runner 3.0.2
+		blockus: Blockus 2.4.3+1.18.2
+		blue_endless_jankson: jankson 1.2.1
+		bosses_of_mass_destruction: Bosses of Mass Destruction (Beta) 1.3.6-1.18.2
+		botania: Botania 1.18.2-431-FABRIC
+		builtinservers: Builtin Servers 1.0.1-BETA+1.18
+		byg: Oh The Biomes You'll Go 1.4-RC-8
+		c2me: Concurrent Chunk Management Engine 0.2.0+alpha.7.0
+		calio: Calio 1.5.1
+		cardinal-components: Cardinal Components API 4.1.4
+		cardinal-components-base: Cardinal Components API (base) 4.1.4
+		cardinal-components-block: Cardinal Components API (blocks) 4.1.4
+		cardinal-components-chunk: Cardinal Components API (chunks) 4.1.4
+		cardinal-components-entity: Cardinal Components API (entities) 4.1.4
+		cardinal-components-item: Cardinal Components API (items) 4.1.4
+		cardinal-components-level: Cardinal Components API (world saves) 4.1.4
+		cardinal-components-scoreboard: Cardinal Components API (scoreboard) 4.1.4
+		cardinal-components-world: Cardinal Components API (worlds) 4.1.4
+		ce: Cave Enhancements 1.1.1
+		chisel: Chisel Refabricated 1.4.5
+		chromatic_currents: Chromatic Currents 1.0.1
+		cloth-basic-math: cloth-basic-math 0.6.0
+		cloth-config: Cloth Config v6 6.2.57
+		cloth-config-lite: cloth-config-lite 2.0.6
+		colormatic: Colormatic 3.1.1+mc.1.18.2
+		com_electronwill_night-config_core: core 3.6.5
+		com_electronwill_night-config_toml: toml 3.6.5
+		com_eliotlash_mclib_mclib: mclib 18
+		com_eliotlash_molang_molang: molang 18
+		com_fasterxml_jackson_core_jackson-annotations: jackson-annotations 2.13.1
+		com_fasterxml_jackson_core_jackson-core: jackson-core 2.13.1
+		com_fasterxml_jackson_core_jackson-databind: jackson-databind 2.13.1
+		com_github_darkkronicle_konstruct_addons: addons 2.0.3-build1
+		com_github_darkkronicle_konstruct_core: core 2.0.3-build1
+		com_ishland_c2me_libs_: libs 0.2.0+alpha.7.0
+		com_moandjiezana_toml_toml4j: toml4j 0.7.2
+		completeconfig: CompleteConfig 1.4.0
+		conjuring: Conjuring 1.0.22+1.18
+		consistency_plus: Consistency Plus 0.5.0+1.18.2
+		crafttweaker: CraftTweaker 9.1.114
+		creatures_of_the_jungle: Creatures From The Jungle 1.0.0
+		creeperoverhaul: Creeper Overhaul 1.3.0
+		crimsonmoon: Crimson Moon 2.2.1-1.18.2
+		crowdin-translate: CrowdinTranslate 1.4+1.18.2
+		cullleaves: Cull Leaves 2.3.2
+		cursery: Cursery Mod 1.18.2-3.0
+		deathcompass: Death Compass 3.2.0
+		difficultyplus: Difficulty Plus 1.0.1
+		direbats: Direbats 2.1.0
+		disable_custom_worlds_advice: Disable Custom Worlds Advice 2.0
+		disenchanter: Disenchanter 0.1.6+1.18
+		dragonloot: DragonLoot 1.0.10
+		duckling: Duckling 1.0.3
+		dusk: Dragonfight Mod 1.18.2-2.1
+		dynamicfps: Dynamic FPS 2.1.0
+		ecologics: Ecologics 1.5.4
+		eldritch_mobs: Eldritch Mobs 1.11.0
+		enchant_the_rainbow: Enchant the Rainbow 1.0.0
+		enchantment_groups: Enchantment Groups 1.1.0+1.18.2
+		enhancedblockentities: Enhanced Block Entities 0.6+1.18.2
+		entity_texture_features: Entity Texture Features 2.5.6
+		extensibleenums: Extensible Enums 3.0.0
+		extraalchemy: Extra Alchemy 1.8.1
+		fabric: Fabric API 0.51.1+1.18.2
+		fabric-api-base: Fabric API Base 0.4.4+d7c144a860
+		fabric-api-lookup-api-v1: Fabric API Lookup API (v1) 1.6.0+2373a54560
+		fabric-biome-api-v1: Fabric Biome API (v1) 8.0.4+7b0f312660
+		fabric-blockrenderlayer-v1: Fabric BlockRenderLayer Registration (v1) 1.1.12+3ac43d9560
+		fabric-command-api-v1: Fabric Command API (v1) 1.1.9+d7c144a860
+		fabric-commands-v0: Fabric Commands (v0) 0.2.8+b4f4f6cd60
+		fabric-containers-v0: Fabric Containers (v0) 0.1.21+d7c144a860
+		fabric-content-registries-v0: Fabric Content Registries (v0) 3.0.3+d82b939260
+		fabric-convention-tags-v1: Fabric Convention Tags 1.0.1+474e4f7960
+		fabric-crash-report-info-v1: Fabric Crash Report Info (v1) 0.1.11+3ac43d9560
+		fabric-dimensions-v1: Fabric Dimensions API (v1) 2.1.17+2540745460
+		fabric-entity-events-v1: Fabric Entity Events (v1) 1.4.8+d7c144a860
+		fabric-events-interaction-v0: Fabric Events Interaction (v0) 0.4.19+d7c144a860
+		fabric-events-lifecycle-v0: Fabric Events Lifecycle (v0) 0.2.14+d7c144a860
+		fabric-game-rule-api-v1: Fabric Game Rule API (v1) 1.0.13+d7c144a860
+		fabric-item-api-v1: Fabric Item API (v1) 1.4.0+4457765560
+		fabric-item-groups-v0: Fabric Item Groups (v0) 0.3.11+91896a4960
+		fabric-key-binding-api-v1: Fabric Key Binding API (v1) 1.0.12+54e5b2ec60
+		fabric-keybindings-v0: Fabric Key Bindings (v0) 0.2.10+b4f4f6cd60
+		fabric-language-kotlin: Fabric Language Kotlin 1.7.1+kotlin.1.6.10
+		fabric-lifecycle-events-v1: Fabric Lifecycle Events (v1) 2.0.3+2d83e92c60
+		fabric-loot-tables-v1: Fabric Loot Tables (v1) 1.0.11+d7c144a860
+		fabric-mining-level-api-v1: Fabric Mining Level API (v1) 2.1.0+81ea5b3c60
+		fabric-models-v0: Fabric Models (v0) 0.3.6+d7c144a860
+		fabric-networking-api-v1: Fabric Networking API (v1) 1.0.21+d882b91560
+		fabric-networking-v0: Fabric Networking (v0) 0.3.8+b4f4f6cd60
+		fabric-object-builder-api-v1: Fabric Object Builder API (v1) 2.1.0+fe4ddef060
+		fabric-particles-v1: Fabric Particles (v1) 0.2.12+526dc1ac60
+		fabric-permissions-api-v0: fabric-permissions-api 0.1-SNAPSHOT
+		fabric-registry-sync-v0: Fabric Registry Sync (v0) 0.9.8+0d9ab37260
+		fabric-renderer-api-v1: Fabric Renderer API (v1) 0.4.13+d882b91560
+		fabric-renderer-indigo: Fabric Renderer - Indigo 0.5.0+7faf0d8860
+		fabric-renderer-registries-v1: Fabric Renderer Registries (v1) 3.2.11+b4f4f6cd60
+		fabric-rendering-data-attachment-v1: Fabric Rendering Data Attachment (v1) 0.3.7+d7c144a860
+		fabric-rendering-fluids-v1: Fabric Rendering Fluids (v1) 2.0.2+54e5b2ec60
+		fabric-rendering-v0: Fabric Rendering (v0) 1.1.13+b4f4f6cd60
+		fabric-rendering-v1: Fabric Rendering (v1) 1.10.7+54e5b2ec60
+		fabric-resource-conditions-api-v1: Fabric Resource Conditions API (v1) 2.0.3+91b7aa6660
+		fabric-resource-loader-v0: Fabric Resource Loader (v0) 0.4.18+2de5574560
+		fabric-screen-api-v1: Fabric Screen API (v1) 1.0.10+d882b91560
+		fabric-screen-handler-api-v1: Fabric Screen Handler API (v1) 1.2.0+1f6558e860
+		fabric-textures-v0: Fabric Textures (v0) 1.0.12+3ac43d9560
+		fabric-transfer-api-v1: Fabric Transfer API (v1) 1.6.0+2373a54560
+		fabric-transitive-access-wideners-v1: Fabric Transitive Access Wideners (v1) 1.0.0+bd8a4a1860
+		fabricenchantments: Fabric Enchantments 0.7.2
+		fabricloader: Fabric Loader 0.13.3
+		fabricshieldlib: Fabric Shield Lib 1.5.3-1.18
+		fancymenu: FancyMenu 2.6.5
+		feature_nbt_deadlock_be_gone: Feature NBT Deadlock Be Gone - Fabric 2.0.0+1.18.2-rc1
+		ferritecore: FerriteCore 4.2.0
+		fiber: fiber 0.23.0-2
+		fiblib: FibLib 1.3.1+1.18.2
+		fleeinganimals: Fleeing Mobs 1.0.1
+		flowery: Flowery Structures 9.1
+		flowerycore: Flowery Core 3
+		forgeconfigapiport: Forge Config API Port 3.2.0
+		friendsandfoes: Friends&Foes 1.3.2
+		ftblibrary: FTB Library 1802.3.6-build.115
+		ftbquests: FTB Quests 1802.3.8-build.101
+		ftbteams: FTB Teams 1802.2.6-build.51
+		furnacemk2: Furnace Mk2 0.1.12-[FABRIC]
+		geckolib3: Geckolib 3.0.35
+		geodes: More Geodes 1.3.1
+		guarding: Guarding 1.0.2
+		hologram-api: Hologram API 0.2.1+1.18-pre5
+		illagerexp: Illager_Expansion 0.1.3
+		impaled: Impaled 1.1.1
+		incantationem: Incantationem 1.1.3+1.18.2
+		indium: Indium 1.0.3+mc1.18.2
+		ingredient-extension-api: Ingredient Extension API 2.0.5
+		inventorio: Inventorio 1.7.0
+		invmove: InvMove 0.7.0
+		io_github_maowimpl_owo: owo 2.0.0
+		itemfilters: Item Filters 1802.2.7-build.21
+		jankson: Jankson 4.0.0+j1.2.0
+		java: Java HotSpot(TM) 64-Bit Server VM 17
+		kambrik: Kambrik 3.0.1-1.18
+		kommandlib: KommandLib 0.1.0-1.18.1
+		kommands: Kommands 0.1.1-1.18.1
+		konkrete: Konkrete 1.3.3
+		ksyxis: Ksyxis 1.1
+		kubejs: KubeJS 1802.5.1-build.335
+		kyrptconfig: Kyrpt Config 1.3.4-1.18
+		lapisreserve: Lapis Reserve 1.0.8
+		lazydfu: LazyDFU 0.1.2
+		levelz: LevelZ 1.3.0
+		libgui: LibGui 5.3.0+1.18
+		libninepatch: LibNinePatch 1.1.0
+		libraryferret: Library Ferret 1.0.3
+		loadingscreentips: Loading Tips 1.0.1
+		maelstrom_library: Maelstrom Library 1.2.4-1.18.2
+		magehand: Magehand 1.1.0
+		magicfungi: Magic Fungi 0.7.1-BETA+1.18.2
+		magna: Magna 1.7.0-1.18-pre1
+		malilib: MaLiLib 0.12.1
+		medievalweapons: Medieval Weapons 1.1.10
+		midnightlib: MidnightLib 0.2.9
+		minecraft: Minecraft 1.18.2
+		mm: Manningham Mills 2.3
+		modid: Creatures Of The Snow 1.0.0
+		modmenu: Mod Menu 3.0.1
+		mostructures: Mo' Structures 1.4.1+1.18.2
+		multipart_entities: MultipartEntities 1.1.5-1.18.2
+		myron: Myron 1.6.3+1.18.1
+		mythicmetals: Mythic Metals 0.13.1
+		notenoughcrashes: Not Enough Crashes 4.1.6+1.18.2
+		nyfsquiver: Nyf's Quivers Fabric-0.5.0-1.18.2
+		omega-config: OmegaConfig 1.2.3-1.18.1
+		omega-config-gui: Omega Config GUI 1.2.3-1.18.1
+		org_apache_commons_commons-csv: commons-csv 1.8
+		org_aperlambda_lambdajcommon: lambdajcommon 1.8.1
+		org_javassist_javassist: javassist 3.28.0-GA
+		org_jetbrains_kotlin_kotlin-reflect: kotlin-reflect 1.6.10
+		org_jetbrains_kotlin_kotlin-stdlib: kotlin-stdlib 1.6.10
+		org_jetbrains_kotlin_kotlin-stdlib-jdk7: kotlin-stdlib-jdk7 1.6.10
+		org_jetbrains_kotlin_kotlin-stdlib-jdk8: kotlin-stdlib-jdk8 1.6.10
+		org_jetbrains_kotlinx_kotlinx-coroutines-core-jvm: kotlinx-coroutines-core-jvm 1.5.2
+		org_jetbrains_kotlinx_kotlinx-coroutines-jdk8: kotlinx-coroutines-jdk8 1.5.2
+		org_jetbrains_kotlinx_kotlinx-serialization-cbor-jvm: kotlinx-serialization-cbor-jvm 1.3.1
+		org_jetbrains_kotlinx_kotlinx-serialization-core-jvm: kotlinx-serialization-core-jvm 1.3.1
+		org_jetbrains_kotlinx_kotlinx-serialization-json-jvm: kotlinx-serialization-json-jvm 1.3.1
+		org_joml_joml: joml 1.10.2
+		org_json_json: json 20211205
+		org_mariuszgromada_math_mathparser_org-mxparser: MathParser.org-mXparser 4.4.2
+		org_reflections_reflections: reflections 0.10.2
+		origins: Origins 1.4.1
+		overweight_farming: Overweight Farming 1.18.2-1.2.0-fabric
+		owo: oωo 0.6.0+1.18
+		packet_tweaker: Packet Tweaker 0.2.0+1.18-pre1
+		patchouli: Patchouli 1.18.2-66-FABRIC
+		pickyourpoison: Pick Your Poison 1.0.5
+		pigsteel: Pigsteel Mod 1.7.1
+		placeholder-api: Placeholder API 1.1.3+1.17.1
+		platforms: Platforms 1.2.4
+		playerabilitylib: Pal 1.5.0
+		polymer: Polymer (Core) 0.2.0-beta.36+1.18.2
+		polymer-legacy: Polymer (Compatibility) 0.1.9+0.2.0-beta.36+1.18.2
+		postmateria: Post Materia 1.0.0-1.18.2
+		projectsavethepets: Project: Save the Pets! 3.0.0-beta.1+2022.ba2ab7966c
+		puzzleslib: Puzzles Lib 3.3.1
+		questsadditions: Quests Additions 1.2.0
+		quickshulker: Quick Shulker 1.3.6-1.18
+		reach-entity-attributes: Reach Entity Attributes 2.1.1
+		repurposed_structures: Repurposed Structures 4.1.5+1.18.2
+		rhino: Rhino 1801.1.9-build.135
+		roughlyenoughitems: Roughly Enough Items 8.1.449
+		satin: Satin 1.7.2
+		server_translations_api: Server Translations API 1.4.9+1.18.2-rc1
+		sgui: sgui 1.0.1+1.18.2
+		shetiphiancore: ShetiPhianCore 1.2.10
+		shulkerutils: shulkerutils 1.0.4-1.18
+		skylorlib: SkyLib 1.3.26
+		smoothboot: Smooth Boot 1.18.2-1.7.0
+		sneakycurses: Sneaky Curses 3.0.0
+		sodium: Sodium 0.4.1+build.15
+		spectrum: Spectrum 1.3.1-1.18.2-midgame16-trinkets-brewing
+		spellbound: Spellbound 1.8.0
+		spoornpacks: SpoornPacks 4.2.1-1.18.2
+		sprintometer: Sprint O' Meter 1.0.1
+		spruceui: SpruceUI 3.3.0+1.17
+		stacc: Stacc 1.2.3
+		step-height-entity-attribute: Step Height Entity Attribute 1.0.0
+		stonecutter_recipe_tags: Stonecutter Recipe Tags 3.0.1+1.18.bc850d5.fabric
+		suggestion_tweaker: Suggestion Tweaker 1.18.2-1.2.0
+		terrablender: TerraBlender 1.1.0.99
+		terraform-wood-api-v1: Terraform Wood API (v1) 3.0.0
+		the_extractinator: The Extractinator 1.0.7
+		tokenablefurnaces: Tokenable Furnaces 1.1.6
+		tooltipfix: ToolTip Fix 1.0.4-1.18
+		totw_additions: Towers of the Wild: Additions 1.2.1
+		trashslot: TrashSlot 11.0.2
+		trinketofundying: Trinket of Undying 2.0.1-1.18
+		trinkets: Trinkets 3.3.0
+		trinketshulkerboxes: Trinket Shulker Boxes 2.0.1-1.18.1
+		trulytreasures: Truly Treasures fabric-1.18.1-2.0.1
+		universal-graves: Universal Graves 2.0.0+1.18.2
+		universalbonemeal: Universal Bone Meal 3.0.4
+		universalenchants: Universal Enchants 3.0.6
+		veinmining: Vein Mining 0.0.12-1.18.2
+		waystones: Waystones 10.0.0
+		weaponmaster: YDM's Weapon Master 1-18-x
+		wmitaf: WMITAF 2.2.0
+		world-data: World Data 1.0.3-1.18.2
+		wthit: wthit 4.8.1
+		xp_storage: XP Storage 1.4.3+1.18
+		yungsapi: YUNG's API 1.18.2-Fabric-2.0.7
+	Launched Version: MultiMC5
+	Backend library: LWJGL version 3.2.2 build 10
+	Backend API: Intel(R) UHD Graphics GL version 3.2.0 - Build 30.0.100.9864, Intel
+	Window size: 1920x991
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: 
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fabric'; Server brand changed to 'fabric'
+	Type: Integrated Server (map_client.txt)
+	Graphics mode: fast
+	Resource Packs: vanilla, spoornpacks, Fabric Mods, file/assets
+	Current Language: English (US)
+	CPU: 8x Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz
+	Server Running: true
+	Player Count: 1 / 8; [class_3222['MaliciousZoroark'/1, l='ServerLevel[E]', x=-41.95, y=71.00, z=96.13]]
+	Data Packs: vanilla, spoornpacks (incompatible), Fabric Mods
+	World Generation: Stable
+	Client Crashes Since Restart: 1
+	Integrated Server Crashes Since Restart: 0
+	Suspected Mods: Minecraft (minecraft), Cardinal Components API (items) (cardinal-components-item), Fabric Loader (fabricloader), Trinkets (trinkets), Cardinal Components API (base) (cardinal-components-base), Trinket Shulker Boxes (trinketshulkerboxes)

@@ -1,0 +1,59 @@
+{
+	id: "0F5DCA7BA8FC733A"
+	group: "0A4FA4BC751FEC87"
+	order_index: 1
+	filename: "a_splash_of_colour"
+	title: "A Splash of Colour!"
+	icon: "spectrum:pedestal_moonstone"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			icon: "spectrum:topaz_shard"
+			x: -1.5d
+			y: -2.0d
+			shape: "square"
+			description: ["Obtain a Topaz Shard. "]
+			hide_dependency_lines: false
+			id: "741794952C6D6CE6"
+			tasks: [{
+				id: "2DFBA5FF960CA3FD"
+				type: "item"
+				item: "spectrum:topaz_shard"
+			}]
+		}
+		{
+			x: 0.0d
+			y: -2.0d
+			shape: "square"
+			id: "2976CF996A6B4081"
+			tasks: [{
+				id: "31389396D9E3130E"
+				type: "item"
+				item: "spectrum:citrine_shard"
+			}]
+		}
+		{
+			x: 1.5d
+			y: -2.0d
+			shape: "square"
+			id: "24CB300F06AE4DD1"
+			tasks: [{
+				id: "646BD3842CBB4249"
+				type: "item"
+				item: "minecraft:amethyst_shard"
+			}]
+		}
+		{
+			x: 0.0d
+			y: 0.5d
+			subtitle: "Obtain a copy of Colorful World, your guide into the energies in our world!"
+			id: "7899490494AB2C1B"
+			tasks: [{
+				id: "27384F95BEAAA142"
+				type: "item"
+				item: "spectrum:manual"
+			}]
+		}
+	]
+}

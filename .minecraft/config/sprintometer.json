@@ -1,0 +1,10 @@
+{
+  "enableSprintOMeter": true,
+  "lowStaminaWarn": true,
+  "sprintDeductionAmount": 1,
+  "jumpDeductionAmount": 0,
+  "staminaRestorationAmount": 1,
+  "staminaDeductionDelay": 100,
+  "staminaRestorationDelay": 0,
+  "coolDownDelay": 25
+}

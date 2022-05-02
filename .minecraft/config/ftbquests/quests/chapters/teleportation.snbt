@@ -1,0 +1,11 @@
+{
+	id: "047320877A0A25CE"
+	group: "0A4FA4BC751FEC87"
+	order_index: 2
+	filename: "teleportation"
+	title: "Teleportation"
+	icon: "waystones:warp_dust"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [ ]
+}

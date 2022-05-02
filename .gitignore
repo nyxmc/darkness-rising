@@ -3,3 +3,26 @@
 
 # Exclude exported Modrinth modpacks
 *.mrpack
+
+# Exclude instance.cfg so it doesn't get modified
+instance.cfg
+
+# Exclude fabric-specific / cache directories
+.fabric
+
+# Exclude any directories / files containing user data
+saves/
+options.txt
+resourcepacks/
+server-resource-packs/
+logs/
+screenshots/
+shaderpacks/
+texturepacks/
+servers.dat
+servers.dat_old
+usercache.json
+
+# whatever that is
+polymer-resourcepack.zip
+TrashSlotSaveState.json

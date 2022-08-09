@@ -1,17 +1,3 @@
-import os
-from zipfile import ZipFile
+from utils import zip
 
-os.mkdir("build")
-
-with ZipFile("build/Darkness_Rising_MMC.zip", mode="w") as archive:
-    archive.write("mmc-pack.json")
-    archive.write("instance.cfg")
-
-    # crawling through directory and subdirectories
-    for root, directories, files in os.walk(".minecraft"):
-        for filename in files:
-            # join the two strings in order to form the full filepath.
-            filepath = os.path.join(root, filename)
-            archive.write(filepath)
-  
-        
+zip("Darkness_Rising_MMC.zip", [".minecraft"], ["mmc-pack.json", "instance.cfg"])

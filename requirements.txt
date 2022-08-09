@@ -1,2 +1,1 @@
-ZipFile
-requests
+murmurhash2

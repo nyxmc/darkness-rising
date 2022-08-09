@@ -4,6 +4,9 @@
 # Exclude exported Modrinth modpacks
 *.mrpack
 
+# Exclude python cache
+__pycache__
+
 # Exclude instance.cfg so it doesn't get modified
 instance.cfg
 

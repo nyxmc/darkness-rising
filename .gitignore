@@ -10,6 +10,12 @@ instance.cfg
 # Exclude fabric-specific / cache directories
 .fabric
 
+# Exclude cf build tmp dir
+tmp/
+
+# Exclude output
+build/
+
 # Exclude any directories / files containing user data
 saves/
 options.txt

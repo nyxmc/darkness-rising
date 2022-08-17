@@ -63,7 +63,7 @@ desc here
 ### Download
 
 [Curseforge]()
-
+<br />
 [MultiMC Instance]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -91,6 +91,7 @@ Distributed under the GNU GPL3 License. See `LICENSE` for more information.
 ## Contact
 
 NyxMC Github Page: [https://github.com/nyxmc](https://github.com/nyxmc)
+<br />
 Project Link: [https://github.com/nyxmc/darkness-rising](https://github.com/nyxmc/darkness-rising)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

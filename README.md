@@ -60,7 +60,7 @@ desc here
 
 
 <!-- DOWNLOAD -->
-### Download
+## Download
 
 [Curseforge]()
 <br />

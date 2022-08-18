@@ -52,7 +52,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-desc here
+Darkness Rising is an RPG and Magic modpack built for the Quilt Modloader. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
